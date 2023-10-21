@@ -72,6 +72,22 @@ show
 ```
 ![ani171_netlist](https://github.com/ani171/pes_vending_machine/assets/97838595/745f32f0-4cbb-422a-918b-9f6fd1270410)
 
+### To get ".net file"
+- In the yosys tool
+```
+write_verilog pes_ptvm_net.v
+!vim pes_ptvm_net.v
+```
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/39df7485-b6b3-459e-8112-731744c5b539)
+
+```
+write_verilog -noattr pes_ptvm_net.v
+!vim pes_ptvm_net.v
+```
+
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/a33f416d-e7ba-4908-b226-fff4c698d4b9)
+
+
 ## Gate Level Simulation
 
 ```
