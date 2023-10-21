@@ -30,4 +30,45 @@
 
 ![tb_file](https://github.com/ani171/pes_vending_machine/assets/97838595/9a2e76a1-66c1-44cd-a517-ea912a079b12)
 
+## Step 2
+
+```
+iverilog pes_ptvm.v pes_ptvm_tb.v  
+ls
+```
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/33c46aff-c2c3-4ea4-b6c9-13ba77799d5e)
+
+```
+./a.out
+gtkwave dump.vcd
+```
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/e2130afe-887e-43f1-b222-7c17b044255c)
+
+### Pre-Synthesis result
+
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/f2f014fb-b17d-4894-8b08-659ca7a6ace5)
+
+## RTL Synthesis
+- In RTL synthesis:
+  - The RTL design is transformed into a gate-level netlist with designer-specified constraints.
+  - The design is converted from abstract RTL to logic gates.
+  - The logic gates are mapped to technology-dependent gates from libraries.
+  - The mapped netlist is optimized while adhering to designer constraints.
+= To perform RTL synthesis:
+  - Utilize the Yosys tool to generate a netlist.
+  - Run the generated netlist using iverilog, along with the ".net" file and the testbench, to create an executable file "a.out."
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/d2babb18-f720-4d42-8f2a-82f8d8b935ca)
+
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog pes_ptvm.v
+synth -top pes_ptvm
+```
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/9e7ca8de-e1b3-44bd-ad1e-7eb0b085359a)
+
+```
+abc -liberty -lib ./lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+![ani171_netlist](https://github.com/ani171/pes_vending_machine/assets/97838595/745f32f0-4cbb-422a-918b-9f6fd1270410)
 
