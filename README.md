@@ -90,6 +90,8 @@ ls
 gtkwave dump.vcd
 ```
 ![new](https://github.com/ani171/pes_vending_machine/assets/97838595/a72bb91a-6bd5-46c3-ad92-d1000906653f)
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/6d507b9d-a31c-4de6-a5f1-0bf4c6f876e3)
+
 
 ![image](https://github.com/ani171/pes_vending_machine/assets/97838595/a4c2a3a2-b631-46fb-9f5d-5c026343e62d)
 
