@@ -32,3 +32,23 @@ gtkwave pes_ptvm_vcd.vcd
 ![image](https://github.com/ani171/pes_vending_machine/assets/97838595/bff5bb70-d442-4865-a8b3-93563d32d8a9)
 
 ![image](https://github.com/ani171/pes_vending_machine/assets/97838595/0fd02ebf-defe-4444-8c0a-53135017ccbe)
+
+## Post-synthesis
+```
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog pes_ptvm.v
+synth -top pes_ptvm
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+stat
+show
+write_verilog pes_ptvm_netlist.v
+iverilog -DFUNCTIONAL -DUNIT_DELAY=#1 ../verilog_model/primitives.v ../verilog_model/sky130_fd_sc_hd.v pes_ptvm_netlist.v pes_ptvm_tb.v
+./a.out
+gtkwave pes_ptvm_vcd.vcd
+```
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/4be4146e-c8bc-4723-86c9-d09e212747b0)
+
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/5d5cb087-e0da-4dda-9b59-42250a0bca10)
+
