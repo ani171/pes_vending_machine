@@ -79,13 +79,7 @@ write_verilog pes_ptvm_net.v
 !vim pes_ptvm_net.v
 ```
 ![image](https://github.com/ani171/pes_vending_machine/assets/97838595/39df7485-b6b3-459e-8112-731744c5b539)
-
-```
-write_verilog -noattr pes_ptvm_net.v
-!vim pes_ptvm_net.v
-```
-
-![image](https://github.com/ani171/pes_vending_machine/assets/97838595/a33f416d-e7ba-4908-b226-fff4c698d4b9)
+![1](https://github.com/ani171/pes_vending_machine/assets/97838595/c46badea-c3e4-4462-89a4-b2a971cf1680)
 
 
 ## Gate Level Simulation
