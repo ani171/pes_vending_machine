@@ -75,7 +75,7 @@ show
 ## Gate Level Simulation
 
 ```
-iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v pes_ptvm.v pes_vtvm_tb.v
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v pes_ptvm_net.v pes_vtvm_tb.v
 ls
 gtkwave dump.vcd
 ```
