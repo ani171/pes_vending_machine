@@ -21,3 +21,14 @@ gtkwave ticketvending.vcd
 
 ## Pre-Synthesis
 
+```
+git clone https://github.com/ani171/pes_vending_machine
+cd pes_vending_machine
+iverilog -o pes_ptvm_out.out pes_ptvm.v pes_ptvm_tb.v
+./pes_ptvm_out.out
+gtkwave pes_ptvm_vcd.vcd
+```
+
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/bff5bb70-d442-4865-a8b3-93563d32d8a9)
+
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/0fd02ebf-defe-4444-8c0a-53135017ccbe)
