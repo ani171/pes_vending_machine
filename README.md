@@ -72,3 +72,13 @@ show
 ```
 ![ani171_netlist](https://github.com/ani171/pes_vending_machine/assets/97838595/745f32f0-4cbb-422a-918b-9f6fd1270410)
 
+## Gate Level Simulation
+
+```
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v pes_ptvm.v pes_vtvm_tb.v
+ls
+gtkwave dump.vcd
+```
+![new](https://github.com/ani171/pes_vending_machine/assets/97838595/a72bb91a-6bd5-46c3-ad92-d1000906653f)
+
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/a4c2a3a2-b631-46fb-9f5d-5c026343e62d)
