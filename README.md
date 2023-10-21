@@ -1,7 +1,7 @@
 # pes_vending_machine
 
 - Creating a Verilog simulation of a parking ticket vending machine that accepts Rs 5 and Rs 10 coins and dispenses a Rs 20 ticket involves designing a digital system that manages coin inputs, validates the coin values, calculates the total amount, and dispenses the ticket when the required amount is reached.
-- The machine is implemented using principles of Finite State Machine, which hop across different states while keeping track of the input coins.
+- The machine is implemented using principles of a Finite State Machine, which hops across different states while keeping track of the input coins.
 
 ![image](https://github.com/ani171/pes_vending_machine/assets/97838595/1fee65f5-59f3-44df-ab8f-32603cc3c320)
 
@@ -82,3 +82,5 @@ gtkwave dump.vcd
 ![new](https://github.com/ani171/pes_vending_machine/assets/97838595/a72bb91a-6bd5-46c3-ad92-d1000906653f)
 
 ![image](https://github.com/ani171/pes_vending_machine/assets/97838595/a4c2a3a2-b631-46fb-9f5d-5c026343e62d)
+
+## Physical Design
