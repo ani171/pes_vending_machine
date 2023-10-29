@@ -96,3 +96,20 @@ gtkwave dump.vcd
 ![image](https://github.com/ani171/pes_vending_machine/assets/97838595/a4c2a3a2-b631-46fb-9f5d-5c026343e62d)
 
 ## Physical Design
+
+### Preparation
+
+The layout is generated using OpenLane. To run a custom design on Openlane, Navigate to the Openlane folder and run the following commands:
+
+```
+cd designs
+mkdir pes_ptvm
+cd pes_ptvm
+mkdir src
+touch config.json
+cd src
+touch pes_ptvm.v
+```
+The pes_ptvm.v file should contain the Verilog RTL code you have used and got the post-synthesis simulation for
+
+
