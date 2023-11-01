@@ -97,19 +97,77 @@ gtkwave dump.vcd
 
 ## Physical Design
 
-### Preparation
+Physical design is the essential procedure that converts an abstract depiction of an electronic system, like an integrated circuit or computer chip, into a practical layout fit for manufacturing. This intricate process involves a series of stages for organizing and structuring different components, such as transistors, wiring, and connections, on a semiconductor material.
 
-The layout is generated using OpenLane. To run a custom design on Openlane, Navigate to the Openlane folder and run the following commands:
+Key facets of physical design encompass:
 
+1. Floorplanning: Defining the spatial arrangement of components and modules within the chip's layout.
+2. Placement: Positioning individual elements like transistors and logic gates efficiently on the semiconductor substrate.
+3. Routing: Establishing the interconnections or wiring between these components to facilitate data flow.
+4. Clock Tree Synthesis (CTS): Structuring the clock distribution network to ensure precise synchronization throughout the chip.
+5. Power Planning: Managing power distribution and consumption to maintain optimal operation and minimize energy usage.
+6. Signal Integrity Analysis: Assessing the integrity of signals during transmission to prevent interference or distortion.
+7. Timing Analysis: Evaluating the timing of signal propagation to meet performance requirements and minimize delays.
+8. Design for Testability (DFT): Incorporating features that simplify testing and fault detection during chip production.
+9. Physical Verification: Conducting rigorous checks to confirm that the physical design adheres to design rules and is free from errors.
+10. Package Design: Creating the external packaging of the chip, considering factors like heat dissipation and connectivity.
+
+### Installation
+
+#### ngspice
+
+- Download the tarball from `https://sourceforge.net/projects/ngspice/files/` to a local directory
 ```
-cd designs
-mkdir pes_ptvm
-cd pes_ptvm
-mkdir src
-touch config.json
-cd src
-touch pes_ptvm.v
+cd $HOME
+sudo apt-get install libxaw7-dev
+tar -zxvf ngspice-41.tar.gz
+cd ngspice-41
+mkdir release
+cd release
+../configure  --with-x --with-readline=yes --disable-debug
+sudo make
+sudo make install
 ```
-The pes_ptvm.v file should contain the Verilog RTL code you have used and got the post-synthesis simulation for
+### magic
+```
+sudo apt-get install m4
+sudo apt-get install tcsh
+sudo apt-get install csh
+sudo apt-get install libx11-dev
+sudo apt-get install tcl-dev tk-dev
+sudo apt-get install libcairo2-dev
+sudo apt-get install mesa-common-dev libglu1-mesa-dev
+sudo apt-get install libncurses-dev
+git clone https://github.com/RTimothyEdwards/magic
+cd magic
+./configure
+sudo make
+sudo make install
+```
+### OpenLane
+```
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt install -y build-essential python3 python3-venv python3-pip make git
 
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt update
+sudo apt install docker-ce docker-ce-cli containerd.io
+sudo docker run hello-world
+sudo groupadd docker
+sudo usermod -aG docker $USER
+sudo reboot 
+# After reboot
+docker run hello-world (should show you the output under 'Example Output' in https://hub.docker.com/_/hello-world)
+
+- To install the PDKs and Tools
+cd $HOME
+git clone https://github.com/The-OpenROAD-Project/OpenLane
+cd OpenLane
+make
+make test
+```
