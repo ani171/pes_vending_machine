@@ -214,11 +214,10 @@ package require openlane
 
 ![VirtualBox_Pysucal_design_02_11_2023_18_51_29](https://github.com/ani171/pes_vending_machine/assets/97838595/62318538-2802-46f6-9505-0f0ca7cfcaba)
 - after preparing the design we now do the first process of physical design which is `run_synthesis`
+- When we execute the "run_synthesis" command in OpenLane, it generates statistics related to the synthesis process, specifically for the "ring_counter." This synthesis operation is marked as successful. During this operation, OpenLane creates a "runs" directory, which contains various logs, results, and reports for the design file that underwent synthesis.
+- The run_synthesis statistics are as below
 
 ![VirtualBox_Pysucal_design_02_11_2023_18_56_50](https://github.com/ani171/pes_vending_machine/assets/97838595/54cee4ed-075d-40f3-a2aa-5f2ba9ab195b)
-
-- When we execute the "run_synthesis" command in OpenLane, it generates statistics related to the synthesis process, specifically for the "ring_counter." This synthesis operation is marked as successful. During this operation, OpenLane creates a "runs" directory, which contains various logs, results, and reports for the design file that underwent synthesis.
-- The run_synthesis statistics are as above
 
 ![VirtualBox_Pysucal_design_02_11_2023_18_56_59](https://github.com/ani171/pes_vending_machine/assets/97838595/86fb41b6-bcab-48bb-9c53-11f7898ec0cd)
 
