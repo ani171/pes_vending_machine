@@ -213,6 +213,8 @@ package require openlane
 `prep -design pes_vending_machine`
 
 ![VirtualBox_Pysucal_design_02_11_2023_18_51_29](https://github.com/ani171/pes_vending_machine/assets/97838595/62318538-2802-46f6-9505-0f0ca7cfcaba)
+### Step 3
+
 - after preparing the design we now do the first process of physical design which is `run_synthesis`
 - When we execute the "run_synthesis" command in OpenLane, it generates statistics related to the synthesis process, specifically for the "ring_counter." This synthesis operation is marked as successful. During this operation, OpenLane creates a "runs" directory, which contains various logs, results, and reports for the design file that underwent synthesis.
 - The run_synthesis statistics are as below
@@ -224,6 +226,22 @@ package require openlane
 - The runs keep track of the process we do in the openlane as shown below:
 
 ![VirtualBox_Pysucal_design_02_11_2023_19_03_28](https://github.com/ani171/pes_vending_machine/assets/97838595/7e3ddddb-a895-424d-b8f6-557975a0aadd)
+
+### Step 4
+
+- Following the synthesis stage, the next step is to create a floorplan for the ring counter. This is achieved by using the "run_floorplan" command. When you run this command, it generates a "floorplan.def" file, which can be utilized to visualize the design using the Magic tool.
+- Upon successful completion of the floorplan operation, you will find a file named "pes_vending_machine.floorplan.def" within the results directory, as demonstrated below:
+
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/22933547-7de0-478e-996b-b4bc5d9051ad)
+
+- This indicates that the "run_floorplan" operation was successful, and now you can utilize the generated floorplan file to view the layout using the Magic tool.
+- To view the floorplan layout with the Magic tool, you can use the following command:
+`magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def ring_counter.floorplan.def &
+`
+- In this command:
+  - -T specifies the tech file.
+  - & is used to run the command in the background, preventing prompts from appearing in the terminal.
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/5e034b0f-7642-4644-8d90-9ee1b6892cee)
 
 
 
