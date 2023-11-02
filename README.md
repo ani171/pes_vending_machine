@@ -253,3 +253,5 @@ package require openlane
 `cat pes_vending_machine.floorplan.def`
 - This command allows you to view the contents of the floorplan file, and the output will be displayed in the terminal. You can then analyze the file to identify and address any potential issues with the floorplan definition.
 
+![VirtualBox_Pysucal_design_02_11_2023_19_25_42](https://github.com/ani171/pes_vending_machine/assets/97838595/df9ad4d3-df7d-489d-8b44-88db33143455)
+
