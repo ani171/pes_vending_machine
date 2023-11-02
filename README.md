@@ -243,5 +243,9 @@ package require openlane
   - & is used to run the command in the background, preventing prompts from appearing in the terminal.
 ![image](https://github.com/ani171/pes_vending_machine/assets/97838595/5e034b0f-7642-4644-8d90-9ee1b6892cee)
 
+![VirtualBox_Pysucal_design_02_11_2023_19_17_09](https://github.com/ani171/pes_vending_machine/assets/97838595/fa6e83b4-ebb5-480c-9e2e-a49fc3a12cbd)
+
+![VirtualBox_Pysucal_design_02_11_2023_19_19_40](https://github.com/ani171/pes_vending_machine/assets/97838595/f1c9fc29-f1d4-44fb-b563-fa43ae515eb6)
+
 
 
