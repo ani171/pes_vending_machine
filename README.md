@@ -247,5 +247,9 @@ package require openlane
 
 ![VirtualBox_Pysucal_design_02_11_2023_19_19_40](https://github.com/ani171/pes_vending_machine/assets/97838595/f1c9fc29-f1d4-44fb-b563-fa43ae515eb6)
 
+![VirtualBox_Pysucal_design_02_11_2023_19_25_42](https://github.com/ani171/pes_vending_machine/assets/97838595/05e739e0-6a4c-439d-a6f1-e502a175e8ab)
 
+- To inspect the contents of the generated floorplan file, "pes_vending_machine.floorplan.def," and check for any issues, particularly related to the utilization parameter, we use the following command:
+`cat pes_vending_machine.floorplan.def`
+- This command allows you to view the contents of the floorplan file, and the output will be displayed in the terminal. You can then analyze the file to identify and address any potential issues with the floorplan definition.
 
