@@ -128,7 +128,7 @@ cd release
 sudo make
 sudo make install
 ```
-### magic
+#### magic
 ```
 sudo apt-get install m4
 sudo apt-get install tcsh
@@ -144,7 +144,7 @@ cd magic
 sudo make
 sudo make install
 ```
-### OpenLane
+#### OpenLane
 ```
 sudo apt-get update
 sudo apt-get upgrade
@@ -171,4 +171,60 @@ cd OpenLane
 make
 make test
 ```
+
+### Step 1
+
+- To begin the physical design process, we must create the design file for the "pes_vending_machine" project. This entails having the "pes_vending_machine.v" file and access to the Skywater Process Design Kit (PDK), which contains all the necessary foundry-provided PDK-related files. To accomplish this, we follow these steps within the Openlane design directory:
+  1. Create a folder called "pes_vending_machine" within the design directory.
+  2. Within the "pes_vending_machine" folder, establish two subfolders named "src" and "config.tcl."
+
+To make the config.tcl file we type the following:
+`vim config.tcl`
+```
+set ::env(DESIGN_NAME) "pes_vending_machine"
+
+set ::env(VERILOG_FILES) "./designs/pes_vending_machine/src/pes_vending_machine.v"
+
+set ::env(CLOCK_PERIOD) "10.000"
+set ::env(CLOCK_PORT) "clk"
+set ::env(CLOCK_NET) $::env(CLOCK_PORT)
+
+set filename $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/$::env(PDK)_$::env(STD_CELL_LIBRARY)_config.tcl
+if { [file exists $filename] == 1} {
+        source $filename
+}
+```
+- after this, we go to the src file and add the pes_vending_machine.v file that we generated from Yosys in RTL synthesis and the required PDKs for our design.
+
+### Step 2
+
+- To initiate Openlane, we invoke it by executing the following commands
+```
+cd Desktop/work/tools/openlane_working_dir/openlane
+docker
+./flow.tcl -interactive
+package require openlane
+```
+- Once we invoke OpenLane it should look the same as shown below:
+
+![VirtualBox_Pysucal_design_02_11_2023_18_48_28](https://github.com/ani171/pes_vending_machine/assets/97838595/bf25ed7c-4502-49fd-94c4-1534c8c2a2f8)
+
+- After launching OpenLane, the next step is to prepare the specific design we want to work on. In this case, given that we're dealing with a vending machine finite state machine (FSM), we can use the following command to prepare the design
+`prep -design pes_vending_machine`
+
+![VirtualBox_Pysucal_design_02_11_2023_18_51_29](https://github.com/ani171/pes_vending_machine/assets/97838595/62318538-2802-46f6-9505-0f0ca7cfcaba)
+- after preparing the design we now do the first process of physical design which is `run_synthesis`
+
+![VirtualBox_Pysucal_design_02_11_2023_18_56_50](https://github.com/ani171/pes_vending_machine/assets/97838595/54cee4ed-075d-40f3-a2aa-5f2ba9ab195b)
+
+- When we execute the "run_synthesis" command in OpenLane, it generates statistics related to the synthesis process, specifically for the "ring_counter." This synthesis operation is marked as successful. During this operation, OpenLane creates a "runs" directory, which contains various logs, results, and reports for the design file that underwent synthesis.
+- The run_synthesis statistics are as above
+
+![VirtualBox_Pysucal_design_02_11_2023_18_56_59](https://github.com/ani171/pes_vending_machine/assets/97838595/86fb41b6-bcab-48bb-9c53-11f7898ec0cd)
+
+- The runs keep track of the process we do in the openlane as shown below:
+
+![VirtualBox_Pysucal_design_02_11_2023_19_03_28](https://github.com/ani171/pes_vending_machine/assets/97838595/7e3ddddb-a895-424d-b8f6-557975a0aadd)
+
+
 
