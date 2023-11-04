@@ -255,3 +255,55 @@ package require openlane
 
 ![VirtualBox_Pysucal_design_02_11_2023_19_25_42](https://github.com/ani171/pes_vending_machine/assets/97838595/df9ad4d3-df7d-489d-8b44-88db33143455)
 
+### Floorplan & Placement
+
+- We invoke OoenLane
+```
+cd OpenLane
+make mount
+./flow.tcl -design pes_vending_machine
+```
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/eb2a2756-d0eb-40c9-9d8f-7db14d2abe61)
+
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/bdfe5ce9-de08-4c29-80c1-9798bf515990)
+
+- To locate the pes_vending_machine.def file for floorplan we type the following command
+```
+cd OpenLane/designs/pes_vending_machine/runs/RUN_2023.11.03_05.18.10/results/floorplan
+ls
+```
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/4b27d0ce-b621-46c8-ab90-d026c00b9fb5)
+
+- now to view the floorplan we use the following command
+```
+magic -T /home/bavitha/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read pes_sdw.def &
+```
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/068783c7-23c4-41dd-831b-3b442caf967b)
+
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/461f897e-9795-4685-a6a6-5e7ba32ddeaa)
+
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/07f9e32d-633b-44e9-85a0-22d3095a97b3)
+
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/d24de559-2129-4115-8236-c7f20b1b6fec)
+
+- For placement first change the directory to
+```
+cd OpenLane/designs/pes_vending_machine/runs/RUN_2023.11.03_05.32.49/results/placement
+magic -T /home/anirudh/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read pes_vending_machine.def &
+```
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/5bb21ec7-a2b2-42f3-a96f-a379d9637581)
+
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/2b55eb71-261f-4ca8-b23d-01e36a6a71db)
+
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/7c6c86fd-859a-4480-9c04-dda6e5d661bc)
+
+### Routing 
+
+```
+magic -T /home/anirudh/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read pes_vending_machine.def &
+```
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/14fab56d-5d08-4abb-9fad-092c83acef50)
+
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/2a46f609-4aa6-41c5-8ef6-ca61b89308d3)
+
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/90c05ce5-62d7-4e2f-8dad-62358bec805e)
