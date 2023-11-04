@@ -297,6 +297,14 @@ magic -T /home/anirudh/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../
 
 ![image](https://github.com/ani171/pes_vending_machine/assets/97838595/7c6c86fd-859a-4480-9c04-dda6e5d661bc)
 
+### Clock tree synthesis
+
+```
+run_cts
+```
+
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/90b047ef-5193-45f3-91f4-4c7ffedf2041)
+
 ### Routing 
 
 ```
@@ -307,3 +315,32 @@ magic -T /home/anirudh/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../
 ![image](https://github.com/ani171/pes_vending_machine/assets/97838595/2a46f609-4aa6-41c5-8ef6-ca61b89308d3)
 
 ![image](https://github.com/ani171/pes_vending_machine/assets/97838595/90c05ce5-62d7-4e2f-8dad-62358bec805e)
+
+### Statistics
+- Synthesis
+
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/7cb7997b-0048-4428-9cfb-5c61bf66aaa7)
+
+- Floorplan
+
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/69a61583-0537-4d8c-bcf3-7a33ced32811)
+
+- Placement
+
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/14f4292b-dc08-4278-b767-ecf54102a7d6)
+
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/6be75642-9d59-4159-a02d-4b325638b582)
+
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/4fa4f9d9-8e7a-4742-b8c4-2a886357d279)
+
+- Clock Tree Synthesis
+
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/d8e66057-d9e8-4144-85c6-a74e544736ac)
+
+- Routing
+
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/49ac178a-c2fe-485f-886f-532edeb08eb6)
+
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/89e538fb-afff-4ba9-9f91-2cbbaa41fd26)
+
+![image](https://github.com/ani171/pes_vending_machine/assets/97838595/04ab3f85-a694-4758-814f-16164f3c76d5)
