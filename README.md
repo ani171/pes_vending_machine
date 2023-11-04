@@ -213,6 +213,7 @@ package require openlane
 `prep -design pes_vending_machine`
 
 ![VirtualBox_Pysucal_design_02_11_2023_18_51_29](https://github.com/ani171/pes_vending_machine/assets/97838595/62318538-2802-46f6-9505-0f0ca7cfcaba)
+
 ### Step 3
 
 - after preparing the design we now do the first process of physical design which is `run_synthesis`
